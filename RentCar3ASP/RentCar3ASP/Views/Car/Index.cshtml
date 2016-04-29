@@ -1,0 +1,105 @@
+﻿@model IEnumerable<RentCar3ASP.Models.CarModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Car", FormMethod.Get))
+{ 
+    @Html.TextBox("search")
+    <select name="type">
+        <option>Model</option>   
+        <option>Brand</option>
+        <option>LocationLongitde</option>   
+        <option>LocationLongitude</option>   
+    </select>
+    <input type="submit" value="Search" />
+
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Buying_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Km)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.Closed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.Pending)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.Open)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location.Longitude)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Buying_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Km)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Closed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Pending)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Open)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Location.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location.Longitude)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdCar }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdCar }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdCar })
+        </td>
+    </tr>
+}
+
+</table>

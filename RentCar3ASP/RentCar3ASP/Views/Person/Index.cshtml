@@ -1,0 +1,77 @@
+﻿@model IEnumerable<RentCar3ASP.Models.PersonModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (Roles.IsUserInRole("admin"))
+{
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nickname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driving_habits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver_experience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.LockoutEnabled)
+            </th>
+          
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nickname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Driving_habits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Driver_experience)
+                </td>
+                <th>
+                    @Html.DisplayFor(model => item.User.LockoutEnabled)
+           </th>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.IdPerson }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.IdPerson }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IdPerson })
+                    </td>
+</tr>
+
+
+        }
+
+
+    </table>
+}
+else
+{
+    <h2>Unauthorized</h2>
+}

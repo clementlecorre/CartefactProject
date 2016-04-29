@@ -1,0 +1,100 @@
+﻿@model RentCar3ASP.Models.CarModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CarModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Buying_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Buying_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Km)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Km)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status.Open)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Status.Pending)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.Closed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Longitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Location.Longitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Latitude)
+        </dt>
+  
+        <dd>
+            @Html.DisplayFor(model => model.Location.Latitude)
+        </dd>
+    </dl>
+    <!-- Map Section -->
+    <div id="map"></div>
+</div>
+
+
+      
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCar }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<script>
+    var myLatLng = new google.maps.LatLng(  @Html.DisplayNameFor(model => model.Location.Latitude) ,  @Html.DisplayNameFor(model => model.Location.Longitude));
+    var beachMarker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: image
+    });
+
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
