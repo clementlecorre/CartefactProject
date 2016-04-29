@@ -11,34 +11,34 @@ alterna ve supervision system, based on a website done with ASP.NET WebForms or 
 
 # Home page
 
-![Home](/../<master>/Screenshot/home.PNG?raw=true "Home")
+![Home](/Screenshot/home.PNG?raw=true "Home")
 
 
 # admin
 
 ## Admin login page
 
-![login admin](/../<master>/Screenshot/login_admin.PNG?raw=true "Login admin")
+![login admin](/Screenshot/login_admin.PNG?raw=true "Login admin")
 
 ## Person List (admin only)
 
-![Person List](/../<master>/Screenshot/Person_admin.PNG?raw=true "Person List")
+![Person List](/Screenshot/Person_admin.PNG?raw=true "Person List")
 
 ## Role user/admin
 
-![Role](/../<master>/Screenshot/role.PNG?raw=true "role")
+![Role](/Screenshot/role.PNG?raw=true "role")
 
 # User login page 
 
-![login user](/../<master>/Screenshot/login_user.PNG?raw=true "Login user")
+![login user](/Screenshot/login_user.PNG?raw=true "Login user")
 
 
 #  Car Rental 
 
-![Rental](/../<master>/Screenshot/rental.PNG?raw=true "Rental")
+![Rental](/Screenshot/rental.PNG?raw=true "Rental")
 
 # Car
 
-![Car List](/../<master>/Screenshot/Car.PNG?raw=true "Car List")
+![Car List](/Screenshot/Car.PNG?raw=true "Car List")
 
 
